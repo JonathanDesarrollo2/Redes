@@ -1,4 +1,3 @@
-// Base de Datos Completa OSI con explicaciones simplificadas
 const osiLayersDB = [
     {
         id: 1,
@@ -232,7 +231,6 @@ const renderLayerDetail = () => {
     `;
 };
 
-// Ejemplos prácticos para cada capa
 const pExample = (id) => {
     const examples = [
         "Conectar el cable Ethernet a tu computador",
@@ -246,7 +244,6 @@ const pExample = (id) => {
     return examples[id - 1] || "Navegar en internet";
 };
 
-// Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     if (window.location.pathname.endsWith('detalle.html')) {
         renderLayerDetail();
