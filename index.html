@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSI JBNetwork - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        .network-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 99, 71, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 99, 71, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .presentation-card {
+            background: linear-gradient(145deg, #fffdd0 60%, #ffecd1 100%);
+            box-shadow: 20px 20px 60px rgba(255, 99, 71, 0.1),
+                       -20px -20px 60px rgba(255, 99, 71, 0.05);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .tech-border {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-border::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff6347, transparent 30%);
+            z-index: -1;
+        }
+
+        .pixel-corners::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 3px solid #ff6347;
+        }
+
+        .pixel-corners::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .pixel-corners::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 3px solid #ff6347;
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+
+        @keyframes grid-pulse {
+            0% { background-size: 40px 40px; }
+            50% { background-size: 42px 42px; }
+            100% { background-size: 40px 40px; }
+        }
+
+        .network-grid {
+            animation: grid-pulse 20s infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#fffdd0] font-['Share_Tech_Mono'] network-grid flex flex-col min-h-screen">
+    <nav class="fixed w-full z-50 bg-[#fff5b1]/95 backdrop-blur-sm border-b-4 border-[#ff6347] shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="R.png" alt="Logo" class="h-12 w-12 object-contain hover:rotate-12 transition-transform">
+                    <span class="text-3xl font-['Electrolize'] text-[#ff6347] tracking-tighter">JB</span>
+                    <span class="text-3xl font-['Electrolize'] text-[#333] tracking-tighter">NETWORKS</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="detalle.html" class="px-4 py-2 rounded-md hover:bg-[#ff6347] hover:text-white transition-all duration-300 text-lg group">
+                        <span class="group-hover:translate-x-1 transition-transform">Explorar Modelo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 flex-grow">
+        <section class="container mx-auto px-6 mb-24" id="main-card">
+            <div class="max-w-6xl mx-auto">
+                <!-- Carta de Presentación -->
+                <div class="presentation-card p-12 rounded-2xl tech-border relative overflow-hidden">
+                    <div class="absolute inset-0 z-0">
+                        <div class="absolute w-48 h-48 bg-[#ff6347]/10 -top-24 -left-24 rounded-full blur-xl"></div>
+                        <div class="absolute w-64 h-64 bg-[#ff6347]/05 -bottom-32 -right-32 rounded-full blur-xl"></div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row items-center gap-12 relative z-10">
+                        <div class="relative group">
+                            <img src="R.png" alt="Logo" class="w-72 h-72 object-contain rounded-2xl border-4 border-[#ff6347]/20 transform transition-all group-hover:border-[#ff6347]/40 group-hover:scale-95">
+                            <div class="absolute inset-0 border-2 border-[#ff6347]/10 rounded-2xl pointer-events-none"></div>
+                        </div>
+                        
+                        <div class="flex-1 space-y-8">
+                            <div class="text-right">
+                                <h1 class="text-5xl font-['Electrolize'] text-[#ff6347] mb-4 leading-tight">
+                                    <span class="inline-block transform -skew-x-6 bg-[#ff6347]/10 px-4 py-2 rounded-lg">Modelo OSI</span><br>
+                                    <span class="text-3xl text-[#333] mt-2 inline-block">Visualización Interactiva</span>
+                                </h1>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <p class="text-xl leading-relaxed text-[#333]/90">
+                                    <span class="border-l-4 border-[#ff6347] pl-4">Descubre la arquitectura de redes a través de una experiencia interactiva que revela los 7 niveles del modelo OSI.</span>
+                                </p>
+                                
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="p-4 bg-[#fff5b1]/50 rounded-lg border-2 border-[#ff6347]/10">
+                                        <h3 class="font-['Electrolize'] text-[#ff6347] mb-2">Características</h3>
+                                        <ul class="list-disc pl-4 text-sm">
+                                            <li>Visualización 3D interactiva</li>
+                                            <li>Protocolos detallados</li>
+                                            <li>Ejemplos prácticos</li>
+                                        </ul>
+                                    </div>
+                                    <div class="p-4 bg-[#fff5b1]/50 rounded-lg border-2 border-[#ff6347]/10">
+                                        <h3 class="font-['Electrolize'] text-[#ff6347] mb-2">Recursos</h3>
+                                        <ul class="list-disc pl-4 text-sm">
+                                            <li>Diagramas descargables</li>
+                                            <li>Casos de estudio</li>
+                                            <li>Simulador de red</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <a href="detalle.html" class="inline-block mt-4 px-8 py-3 bg-gradient-to-r from-[#ff6347] to-[#ff4500] text-white rounded-xl hover:shadow-lg transition-all group">
+                                    <span class="flex items-center gap-2">
+                                        <span class="group-hover:translate-x-1 transition-transform">Explorar Capas</span>
+                                        <svg class="w-5 h-5 group-hover:rotate-90 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+    </main>
+
+    <footer class="bg-[#ff6347] text-[#fffdd0] py-12 border-t-4 border-[#fff5b1] mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-['Electrolize'] text-lg">&lt;/&gt; con ❤️ por Jonathan Blanco © 2024</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
