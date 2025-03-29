@@ -6,6 +6,11 @@ const crearLista = (items) => `
     ${items.map(item => `<li class="text-gray-700">${item}</li>`).join('')}
   </ul>
 `;
+const crearListaInline = (items) => `
+  <ul class="list-disc list-inside space-y-1">
+    ${items.map(item => `<li class="text-gray-700 text-sm">${item}</li>`).join('')}
+  </ul>
+`;
 
 const Componentes = {
   renderizarIcono: (iconoData) => {
@@ -55,30 +60,30 @@ const Componentes = {
   `,
 
   tablaComparativa: (data) => `
-    <div class="rounded-lg border border-gray-200 overflow-hidden">
-      <table class="w-full">
-        <thead class="bg-gray-50">
-          <tr>
-            <th class="px-6 py-4 text-left font-semibold text-gray-700">Modelo</th>
-            <th class="px-6 py-4 text-center font-semibold text-gray-700">Flexibilidad</th>
-            <th class="px-6 py-4 text-center font-semibold text-gray-700">Documentación</th>
-            <th class="px-6 py-4 text-center font-semibold text-gray-700">Velocidad</th>
+  <div class="rounded-lg border border-gray-200 overflow-hidden">
+    <table class="w-full">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="px-6 py-4 text-left font-semibold text-gray-700">Modelo</th>
+          <th class="px-6 py-4 text-center font-semibold text-gray-700">Ventajas</th>
+          <th class="px-6 py-4 text-center font-semibold text-gray-700">Desventajas</th>
+          <th class="px-6 py-4 text-center font-semibold text-gray-700">Uso Actual</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        ${data.modelos.map(modelo => `
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4 font-medium text-gray-900">${modelo.nombre}</td>
+            <td class="px-6 py-4">${crearListaInline(modelo.ventajas)}</td>
+            <td class="px-6 py-4">${crearListaInline(modelo.desventajas)}</td>
+            <td class="px-6 py-4 text-center">${modelo.usoActual}</td>
           </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200">
-          ${data.modelos.map(modelo => `
-            <tr class="hover:bg-gray-50">
-              <td class="px-6 py-4 font-medium text-gray-900">${modelo.nombre}</td>
-              <td class="px-6 py-4 text-center">${modelo.flexibilidad}</td>
-              <td class="px-6 py-4 text-center">${modelo.documentación}</td>
-              <td class="px-6 py-4 text-center">${modelo.velocidad}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-      <div class="p-4 bg-gray-50 border-t border-gray-200">
-        <p class="text-sm text-gray-600">${data.conclusion}</p>
-      </div>
+        `).join('')}
+      </tbody>
+    </table>
+    <div class="p-4 bg-gray-50 border-t border-gray-200">
+      <p class="text-sm text-gray-600">${data.conclusion}</p>
     </div>
+  </div>
   `
 };

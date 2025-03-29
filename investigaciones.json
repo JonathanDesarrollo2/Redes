@@ -378,26 +378,6 @@
         },
         {
           "comparativa": {
-            "titulo": "📊 Topologías: Ventajas y Desventajas",
-            "modelos": [
-              {
-                "nombre": "Bus 🚌",
-                "confiabilidad": "1/10",
-                "facilidadInstalacion": "9/10",
-                "costo": "3/10"
-              },
-              {
-                "nombre": "Malla 🕸️",
-                "confiabilidad": "10/10",
-                "facilidadInstalacion": "4/10",
-                "costo": "8/10"
-              }
-            ],
-            "conclusion": "La malla sigue siendo útil para áreas grandes donde la confiabilidad es crítica"
-          }
-        },
-        {
-          "comparativa": {
             "titulo": "📊 Topologías: ¿Cuál Elegir?",
             "modelos": [
               {
