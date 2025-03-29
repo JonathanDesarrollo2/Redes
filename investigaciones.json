@@ -182,22 +182,21 @@
             "Realidad Virtual: 16ms de latencia"
           ]
         }
-      },
-      {
+      },{
         "comparativa": {
           "titulo": "📊 Capas vs Protocolos",
           "modelos": [
             {
               "nombre": "Física",
-              "flexibilidad": "2/10",
-              "documentación": "8/10",
-              "velocidad": "10/10"
+              "ventajas": ["Alta velocidad", "Bajo costo de implementación"],
+              "desventajas": ["Poca flexibilidad", "Limitaciones físicas"],
+              "usoActual": "100% de redes cableadas"
             },
             {
               "nombre": "Aplicación",
-              "flexibilidad": "9/10",
-              "documentación": "7/10",
-              "velocidad": "6/10"
+              "ventajas": ["Alta flexibilidad", "Fácil integración"],
+              "desventajas": ["Mayor latencia", "Dependencia de software"],
+              "usoActual": "Todas las aplicaciones web"
             }
           ],
           "conclusion": "Las capas bajas priorizan velocidad, las altas flexibilidad"

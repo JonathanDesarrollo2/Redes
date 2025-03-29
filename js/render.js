@@ -1,13 +1,12 @@
 class RenderManager {
   constructor() {
     this.investigaciones = [];
-    this.init();
   }
 
   async init() {
     await this.cargarDatos();
     this.renderVistaDetalle();
-    this.renderListadoInicial(); // <- Nueva línea agregada
+    this.renderListadoInicial();
   }
 
   async cargarDatos() {
@@ -33,9 +32,10 @@ class RenderManager {
         (item) => item.id === parseInt(idParam)
       );
     }
-    
-    if (!investigacion && this.investigaciones.length > 0) {
-      investigacion = this.investigaciones[0];
+
+    // Fallback a ID 1 si no se encuentra o no hay parámetro
+    if (!investigacion) {
+      investigacion = this.investigaciones.find(item => item.id === 1) || this.investigaciones[0];
     }
 
     if (investigacion) {
@@ -87,8 +87,6 @@ class RenderManager {
       .join("");
   }
 
-
-
   renderListadoInicial() {
     const contenedor = document.getElementById("lista-investigaciones");
     if (!contenedor) return;
@@ -102,6 +100,7 @@ class RenderManager {
       }))
       .join("");
   }
+
   renderIntroduccion(data) {
     return `
       <section class="space-y-6 mb-12">
@@ -113,7 +112,7 @@ class RenderManager {
       </section>
     `;
   }
-  
+
   renderCapasDetalladas(data) {
     return `
       <section class="space-y-8">
@@ -140,7 +139,7 @@ class RenderManager {
       </section>
     `;
   }
-  
+
   renderModeloDestacado(data) {
     return `
       <section class="mb-12">
@@ -254,4 +253,8 @@ class RenderManager {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => new RenderManager());
+// Inicialización corregida
+document.addEventListener("DOMContentLoaded", async () => {
+  const renderManager = new RenderManager();
+  await renderManager.init();
+});
