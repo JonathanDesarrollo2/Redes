@@ -391,47 +391,47 @@
                 "confiabilidad": "10/10",
                 "facilidadInstalacion": "4/10",
                 "costo": "8/10"
-              },
-              {
-                "comparativa": {
-                  "titulo": "📊 Topologías: ¿Cuál Elegir?",
-                  "modelos": [
-                    {
-                      "nombre": "Bus 🚌 (Antiguo)",
-                      "ventajas": ["Barato", "Fácil instalar"],
-                      "desventajas": ["Si falla un cable, toda la red cae", "Lento"],
-                      "usoActual": "0.5% redes modernas"
-                    },
-                    {
-                      "nombre": "Anillo 🔄 (Obsoleto)",
-                      "ventajas": ["Mejor que bus"],
-                      "desventajas": ["Un dispositivo roto detiene todo"],
-                      "usoActual": "Sistemas industriales legacy"
-                    },
-                    {
-                      "nombre": "Estrella 🌟 (Común)",
-                      "ventajas": ["Fácil diagnosticar fallos", "Escalable"],
-                      "desventajas": ["Dependencia del router central"],
-                      "usoActual": "85% redes domésticas"
-                    },
-                    {
-                      "nombre": "Malla 🕸️ (Avanzada)",
-                      "ventajas": ["Sin punto único de fallo", "Auto-reparable"],
-                      "desventajas": ["Cara", "Compleja configuración"],
-                      "usoActual": "Edificios grandes/empresas"
-                    },
-                    {
-                      "nombre": "Árbol 🌳 (Internet)",
-                      "ventajas": ["Jerarquía organizada", "Escalabilidad global"],
-                      "desventajas": ["Dependencia de backbone"],
-                      "usoActual": "Internet global"
-                    }
-                  ],
-                  "conclusion": "🔑 La malla sigue siendo útil para fábricas u hospitales donde la confiabilidad es crítica"
-                }
               }
             ],
             "conclusion": "La malla sigue siendo útil para áreas grandes donde la confiabilidad es crítica"
+          }
+        },
+        {
+          "comparativa": {
+            "titulo": "📊 Topologías: ¿Cuál Elegir?",
+            "modelos": [
+              {
+                "nombre": "Bus 🚌 (Antiguo)",
+                "ventajas": ["Barato", "Fácil instalar"],
+                "desventajas": ["Si falla un cable, toda la red cae", "Lento"],
+                "usoActual": "0.5% redes modernas"
+              },
+              {
+                "nombre": "Anillo 🔄 (Obsoleto)",
+                "ventajas": ["Mejor que bus"],
+                "desventajas": ["Un dispositivo roto detiene todo"],
+                "usoActual": "Sistemas industriales legacy"
+              },
+              {
+                "nombre": "Estrella 🌟 (Común)",
+                "ventajas": ["Fácil diagnosticar fallos", "Escalable"],
+                "desventajas": ["Dependencia del router central"],
+                "usoActual": "85% redes domésticas"
+              },
+              {
+                "nombre": "Malla 🕸️ (Avanzada)",
+                "ventajas": ["Sin punto único de fallo", "Auto-reparable"],
+                "desventajas": ["Cara", "Compleja configuración"],
+                "usoActual": "Edificios grandes/empresas"
+              },
+              {
+                "nombre": "Árbol 🌳 (Internet)",
+                "ventajas": ["Jerarquía organizada", "Escalabilidad global"],
+                "desventajas": ["Dependencia de backbone"],
+                "usoActual": "Internet global"
+              }
+            ],
+            "conclusion": "🔑 La malla sigue siendo útil para fábricas u hospitales donde la confiabilidad es crítica"
           }
         }
       ],
