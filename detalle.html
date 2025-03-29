@@ -1,134 +1,56 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSI JBNetwork - Detalle</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <style>
-        .network-grid {
-            background-image: 
-                linear-gradient(to right, rgba(255, 99, 71, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 99, 71, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-            animation: grid-pulse 20s infinite;
-        }
-
-        @keyframes grid-pulse {
-            0% { background-size: 40px 40px; }
-            50% { background-size: 42px 42px; }
-            100% { background-size: 40px 40px; }
-        }
-
-        .layer-card {
-            background: linear-gradient(145deg, #fffdd0 60%, #ffecd1 100%);
-            box-shadow: 20px 20px 60px rgba(255, 99, 71, 0.1),
-                       -20px -20px 60px rgba(255, 99, 71, 0.05);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .tech-badge {
-            background: linear-gradient(45deg, #ff6347, #ff4500);
-            clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-        }
-
-        .protocol-chip {
-            transition: all 0.3s ease;
-            background: rgba(255, 99, 71, 0.15);
-        }
-
-        .protocol-chip:hover {
-            transform: translateY(-2px);
-            background: rgba(255, 99, 71, 0.25);
-        }
-
-        .detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSI JBNetwork - Detalle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#fffdd0] font-['Share_Tech_Mono'] network-grid flex flex-col min-h-screen">
-    <nav class="fixed w-full z-50 bg-[#fff5b1]/95 backdrop-blur-sm border-b-4 border-[#ff6347] shadow-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <img src="R.png" alt="Logo" class="h-12 w-12 object-contain hover:rotate-12 transition-transform">
-                    <span class="text-3xl font-['Electrolize'] text-[#ff6347] tracking-tighter">JB</span>
-                    <span class="text-3xl font-['Electrolize'] text-[#333] tracking-tighter">NETWORKS</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="index.html" class="px-4 py-2 rounded-md hover:bg-[#ff6347] hover:text-white transition-all duration-300 text-lg group">
-                        <span class="group-hover:-translate-x-1 transition-transform">← Volver al Inicio</span>
-                    </a>
-                </div>
-            </div>
+<style>
+    body {
+      background-image: 
+        linear-gradient(to right, #ff634710 1px, transparent 1px),
+        linear-gradient(to bottom, #ff634710 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+<body class="bg-[#fffdd0] font-['Share_Tech_Mono'] min-h-screen flex flex-col">
+  <nav class="fixed w-full z-50 bg-[#fff5b1]/95 backdrop-blur-sm border-b-4 border-[#ff6347] shadow-lg">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <img src="R.png" alt="Logo" class="h-12 w-12 object-contain hover:rotate-12 transition-transform">
+          <span class="text-3xl font-['Electrolize'] text-[#ff6347] tracking-tighter">JB</span>
+          <span class="text-3xl font-['Electrolize'] text-[#333] tracking-tighter">NETWORKS</span>
         </div>
-    </nav>
-<!-- Mantener todo el head y nav original -->
-
-<main class="pt-32 pb-20 flex-grow">
-    <div class="container mx-auto px-6" id="detail-container">
-        <!-- Sección ISO -->
-        <div class="layer-card mb-16 p-8 rounded-2xl bg-[#fff5b1]/80">
-            <h2 class="text-4xl font-['Electrolize'] text-[#ff6347] mb-6">¿Qué es ISO y por qué es importante?</h2>
-            <div class="space-y-6 text-[#333]/90">
-                <p class="text-lg leading-relaxed">
-                    ISO (Organización Internacional de Normalización) creó el modelo OSI como un <strong>lenguaje universal</strong> para que diferentes dispositivos de red puedan comunicarse. Imagínalo como un traductor que permite a tu computadora, smartphone y hasta tu nevera inteligente entenderse entre sí, sin importar su marca o sistema operativo.
-                </p>
-                
-                <div class="p-4 bg-[#ff6347]/10 rounded-lg">
-                    <h3 class="font-['Electrolize'] text-xl text-[#ff6347] mb-3">🗣️ ¿Cómo funciona en la práctica?</h3>
-                    <p>Cuando envías un mensaje por WhatsApp:</p>
-                    <ul class="list-disc pl-6 mt-2 space-y-2">
-                        <li>Tu teléfono <strong>divide la información</strong> en partes manejables</li>
-                        <li>Cada parte viaja por diferentes caminos en internet</li>
-                        <li>El modelo OSI asegura que todo <strong>llegue en orden</strong> y sin errores</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="px-4 py-2 rounded-md hover:bg-[#ff6347] hover:text-white transition-all duration-300 text-lg group">
+            <span class="group-hover:-translate-x-1 transition-transform">← Volver al Inicio</span>
+          </a>
         </div>
-
-        <!-- OSI Layers generado por JS -->
-        
-        <!-- Sección Tipos de Redes -->
-        <div class="layer-card mt-16 p-8 rounded-2xl bg-[#fff5b1]/80">
-            <h2 class="text-4xl font-['Electrolize'] text-[#ff6347] mb-6">Tipos de Redes Comunes</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-6 bg-white rounded-xl">
-                    <h3 class="font-['Electrolize'] text-[#ff6347] text-xl mb-3">🏠 Redes Locales (LAN)</h3>
-                    <p>Como la de tu casa u oficina. Características:</p>
-                    <ul class="list-disc pl-6 mt-2 space-y-2">
-                        <li>Cubre áreas pequeñas</li>
-                        <li>Alta velocidad (WiFi/Ethernet)</li>
-                        <li>Ejemplo: Conexión entre tu PC e impresora</li>
-                    </ul>
-                </div>
-                
-                <div class="p-6 bg-white rounded-xl">
-                    <h3 class="font-['Electrolize'] text-[#ff6347] text-xl mb-3">🌍 Redes Amplias (WAN)</h3>
-                    <p>Conectan grandes distancias:</p>
-                    <ul class="list-disc pl-6 mt-2 space-y-2">
-                        <li>Internet es la WAN más grande</li>
-                        <li>Usan satélites y cables submarinos</li>
-                        <li>Velocidad variable según distancia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</main>
+  </nav>
 
-<!-- Mantener footer original -->
-
-    <footer class="bg-[#ff6347] text-[#fffdd0] py-12 border-t-4 border-[#fff5b1] mt-auto">
-        <div class="container mx-auto px-6 text-center">
-            <p class="font-['Electrolize'] text-lg">&lt;/&gt;  con ❤️ por Jonathan Blanco © 2024</p>
+  <main class="pt-32 pb-20 flex-grow">
+    <div class="container mx-auto px-6" id="detail-container">
+      <div id="detalle-investigacion">
+        <!-- Tarjeta contenedora principal -->
+        <div class="max-w-5xl mx-auto bg-orange-50/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border-2 border-orange-200/30 transform hover:shadow-3xl transition-all duration-300">
+          <!-- El contenido dinámico se inyectará aquí -->
         </div>
-    </footer>
+      </div>
+    </div>
+  </main>
 
-    <script src="scripts.js"></script>
+  <footer class="bg-[#ff6347] text-[#fffdd0] py-12 border-t-4 border-[#fff5b1] mt-auto">
+    <div class="container mx-auto px-6 text-center">
+      <p class="font-['Electrolize'] text-lg">&lt;/&gt;  con ❤️ por Jonathan Blanco © 2024</p>
+    </div>
+  </footer>
+
+  <script src="js/components.js"></script>
+  <script src="js/render.js"></script>
 </body>
 </html>

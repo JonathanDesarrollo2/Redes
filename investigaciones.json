@@ -1,0 +1,440 @@
+[
+  {
+    "id": 1,
+    "titulo": "Modelo OSI: Las 7 Capas de Redes",
+    "contenido": "Arquitectura fundamental para entender las comunicaciones en redes modernas",
+    "contenidoCompleto": [
+      {
+        "introduccion": {
+          "titulo": "Evolución Histórica del Modelo OSI",
+          "texto": "Estándar creado para garantizar interoperabilidad entre sistemas de diferentes fabricantes",
+          "lineaTemporal": [
+            "1977: Primeros trabajos ISO",
+            "1984: Publicación oficial ISO 7498",
+            "1990: Adaptación para TCP/IP",
+            "2020: Actualización para IoT/5G"
+          ]
+        }
+      },
+      {
+        "capasDetalladas": {
+          "titulo": "Desglose de las 7 Capas OSI",
+          "capas": [
+            {
+              "id": 1,
+              "nombre": "Capa Física",
+              "resumen": "Como los cables y señales WiFi que llevan la información de un lugar a otro",
+              "descripcion": "Es la 'carretera' física por donde viajan los datos. Convierte los unos y ceros en señales reales que pueden viajar por cables, ondas de radio o luz en la fibra óptica.",
+              "detallesTecnicos": [
+                "Materiales comunes: Cables de cobre (como los Ethernet), fibra óptica (para internet rápido), ondas de radio (WiFi/Bluetooth)",
+                "Dispositivos básicos: Repetidores para amplificar señales débiles, hubs para conectar varios dispositivos",
+                "Velocidades típicas: Desde 10 Mbps (básico) hasta 100 Gbps (fibra óptica avanzada)",
+                "Problemas comunes: Cortes de cable, interferencias de otros dispositivos, distancia máxima limitada"
+              ],
+              "protocolos": ["Ethernet", "USB", "Bluetooth", "HDMI"]
+            },
+            {
+              "id": 2,
+              "nombre": "Capa de Enlace",
+              "resumen": "El organizador de paquetes que evita errores en la conexión directa",
+              "descripcion": "Actúa como un cartero local: asegura que los paquetes lleguen bien al vecino (dispositivo conectado directamente) antes de seguir su viaje.",
+              "detallesTecnicos": [
+                "Direcciones MAC: Identificador único de cada dispositivo (como el número de serie de tu tarjeta de red)",
+                "Detección de errores: Sistema de verificación (CRC) como cuando sumas los números de una cuenta para ver si está bien",
+                "Control de acceso: Reglas para evitar choques de información (como esperar tu turno para hablar)",
+                "Ejemplo práctico: Cuando tu PC y la impresora negocian cómo enviar el documento"
+              ],
+              "protocolos": ["PPP (Internet por línea telefónica)", "Ethernet II", "Switch Management"]
+            },
+            {
+              "id": 3,
+              "nombre": "Capa de Red",
+              "resumen": "El GPS de los datos que elige las mejores rutas",
+              "descripcion": "Se encarga de encontrar el camino óptimo a través de múltiples redes diferentes (como pasar por varias ciudades en un viaje).",
+              "detallesTecnicos": [
+                "Direcciones IP: Como la dirección de tu casa pero para internet (ej: 192.168.1.1)",
+                "Enrutamiento inteligente: Elige caminos alternativos si hay congestión (como Waze para datos)",
+                "Fragmentación: Divide paquetes grandes para que quepan en redes más lentas",
+                "Ejemplo: Cuando un video de YouTube toma diferentes caminos para llegar más rápido"
+              ],
+              "protocolos": ["IP (Internet Protocol)", "ICMP (Usado por ping)", "IPsec (Conexiones seguras)"]
+            },
+            {
+              "id": 4,
+              "nombre": "Capa de Transporte",
+              "resumen": "El controlador de tráfico que asegura llegada sin errores",
+              "descripcion": "Garantiza que toda la información llegue completa y en orden, como cuando armas un rompecabezas con todas sus piezas.",
+              "detallesTecnicos": [
+                "TCP: Conexiones confiables (como una llamada telefónica donde confirmas que escuchaste)",
+                "UDP: Transmisión rápida pero sin confirmación (como un walkie-talkie)",
+                "Control de flujo: Ajusta velocidad según capacidad del receptor",
+                "Ejemplo: Cuando descargas un archivo y verifica que no tenga errores"
+              ],
+              "protocolos": ["TCP (Web, Email)", "UDP (Videojuegos, Streaming)", "SCTP (Telefonía IP)"]
+            },
+            {
+              "id": 5,
+              "nombre": "Capa de Sesión",
+              "resumen": "El moderador que organiza las conversaciones",
+              "descripcion": "Administra diálogos entre aplicaciones, como cuando inicias sesión y mantienes una conversación constante con un servidor.",
+              "detallesTecnicos": [
+                "Sincronización: Puntos de control para reanudar transferencias interrumpidas",
+                "Autenticación: Verifica identidades antes de permitir comunicación",
+                "Control de diálogo: Permite comunicación bidireccional simultánea",
+                "Ejemplo: Cuando mantienes abierta tu sesión en redes sociales"
+              ],
+              "protocolos": ["SSH (Conexiones seguras)", "RPC (Llamadas entre programas)", "NetBIOS (Redes locales Windows)"]
+            },
+            {
+              "id": 6,
+              "nombre": "Capa de Presentación",
+              "resumen": "El traductor universal de formatos de datos",
+              "descripcion": "Convierte la información a formatos universales entendibles por cualquier dispositivo, como cuando traducen un libro a otro idioma.",
+              "detallesTecnicos": [
+                "Codificación: Transforma texto a binario (ASCII/Unicode para caracteres)",
+                "Compresión: Reduce tamaño de archivos (ZIP, JPEG, MP3)",
+                "Cifrado: Protege información sensible (SSL/TLS en páginas web)",
+                "Ejemplo: Cuando subes una foto y se adapta automáticamente al dispositivo"
+              ],
+              "protocolos": ["SSL/TLS (Seguridad web)", "MIME (Formatos de email)", "JSON/XML (APIs modernas)"]
+            },
+            {
+              "id": 7,
+              "nombre": "Capa de Aplicación",
+              "resumen": "La interfaz que ves y usas directamente",
+              "descripcion": "Son los programas y servicios que usas diariamente para comunicarte a través de la red.",
+              "detallesTecnicos": [
+                "Protocolos específicos: HTTP para web, SMTP para emails, FTP para transferencia de archivos",
+                "APIs: Conexiones entre aplicaciones (como cuando un sitio usa Google Maps)",
+                "Servicios básicos: DNS (traduce nombres a IPs), DHCP (asigna IPs automáticamente)",
+                "Ejemplo: Cuando escribes una URL en el navegador y cargas una página web"
+              ],
+              "protocolos": ["HTTP/HTTPS", "DNS", "SMTP", "FTP", "WebSockets"]
+            }
+          ]
+        }
+      },
+      {
+        "modeloDestacado": {
+          "nombre": "Capa de Aplicación",
+          "icono": { "tipo": "emoji", "valor": "🌐" },
+          "enfoque": "Interfaz usuario-servidor",
+          "caracteristicas": [
+            "Protocolos: HTTP, SMTP, FTP",
+            "API REST y WebSockets",
+            "Autenticación y cifrado SSL"
+          ],
+          "casoEstudio": {
+            "titulo": "Navegación Web Segura",
+            "resultado": "HTTPS reduce 85% ataques MITM"
+          }
+        }
+      },
+      {
+        "diagramaInteractivo": {
+          "titulo": "Flujo de Datos entre Capas",
+          "estructura": [
+            "Datos → Segmentos → Paquetes → Tramas → Bits",
+            "Encapsulamiento: Añadir headers en cada capa"
+          ],
+          "aplicacion": "Usado en 100% de dispositivos conectados",
+          "flujo": "▶️ Comienza en capa 7 y desciende hasta capa 1"
+        }
+      },
+      {
+        "iterativo": {
+          "titulo": "Capa de Transporte en Acción",
+          "infografia": [
+            "🔒 TCP: Conexiones confiables",
+            "🚀 UDP: Baja latencia",
+            "🛡️ Firewalls de capa 4",
+            "📈 Throughput de 1Gbps a 100Gbps"
+          ],
+          "ejemplo": "Zoom usa UDP para videollamadas en tiempo real"
+        }
+      },
+      {
+        "espiral": {
+          "advertencia": "⚠️ Complejidad de Enrutamiento",
+          "fases": [
+            {
+              "nombre": "Direccionamiento IP",
+              "herramientas": ["IPv4", "IPv6", "NAT"],
+              "costo": "20ms overhead por paquete"
+            },
+            {
+              "nombre": "Control de Congestión",
+              "eficiencia": "Reduce pérdida de paquetes en 60%"
+            }
+          ],
+          "estadistica": "Internet actual usa 65% IPv4 vs 35% IPv6"
+        }
+      },
+      {
+        "continuo": {
+          "titulo": "Operación en Tiempo Real",
+          "pipeline": [
+            "Detección → Enrutamiento → Entrega",
+            "Latencia crítica <1ms en 5G"
+          ],
+          "casosExitos": [
+            "Bolsa de Valores: 0.05ms transacciones",
+            "Realidad Virtual: 16ms de latencia"
+          ]
+        }
+      },
+      {
+        "comparativa": {
+          "titulo": "📊 Capas vs Protocolos",
+          "modelos": [
+            {
+              "nombre": "Física",
+              "flexibilidad": "2/10",
+              "documentación": "8/10",
+              "velocidad": "10/10"
+            },
+            {
+              "nombre": "Aplicación",
+              "flexibilidad": "9/10",
+              "documentación": "7/10",
+              "velocidad": "6/10"
+            }
+          ],
+          "conclusion": "Las capas bajas priorizan velocidad, las altas flexibilidad"
+        }
+      },
+      {
+        "seleccion": {
+          "titulo": "🔍 Diagnóstico de Fallas",
+          "flujograma": [
+            "¿No hay conexión física? → Verificar capa 1",
+            "¿DNS no resuelve? → Revisar capa 7",
+            "¿Paquetes perdidos? → Analizar capa 3-4"
+          ],
+          "reglaOro": "Siempre diagnosticar de capa 1 a 7"
+        }
+      }
+    ],
+    "imagen": "R.png"
+  },
+    {
+      "id": 2,
+      "titulo": "🏠 Topología de la Casa 1: La Red en Tu Hogar",
+      "contenido": "Evolución de las conexiones domésticas desde cables simples hasta internet global",
+      "contenidoCompleto": [
+        {
+          "introduccion": {
+            "titulo": "📜 Historia de las Conexiones Domésticas",
+            "texto": "De los primeros cables a la magia invisible del WiFi: cómo conectamos dispositivos en casa",
+            "lineaTemporal": [
+              "🔌 1970: Cableado en bus (como extensiones eléctricas)",
+              "⭕ 1980: Conexiones en anillo (problemas de velocidad)",
+              "🕸️ 1995: Primeras redes en malla (más estabilidad)",
+              "🌟 2000: Popularización de redes en estrella (concentradores)",
+              "🌳 2010: Modelo de árbol (el internet moderno)",
+              "📶 2020: Routers WiFi 6 (velocidades ultra rápidas)"
+            ]
+          }
+        },
+        {
+          "capasDetalladas": {
+            "titulo": "🧩 Componentes Clave de una Red Doméstica",
+            "capas": [
+              {
+                "id": 1,
+                "nombre": "Cableado Físico 🧵",
+                "resumen": "Los 'senderos' de cobre y fibra que unen tus dispositivos",
+                "descripcion": "Como las tuberías de una casa pero para información: llevan datos de un lugar a otro usando señales eléctricas o luminosas. Los cables Ethernet son los más comunes, parecidos a los de teléfono pero más gruesos.",
+                "detallesTecnicos": [
+                  "🚫 Límite de 100 metros: Después de esta distancia pierde señal (como cuando gritas y no te escuchan lejos)",
+                  "📏 Tipos: UTP (plástico), FTP (con malla protectora), fibra óptica (vidrio delgado)",
+                  "🔌 Conectores: RJ45 para internet, coaxial para TV, USB para dispositivos cercanos",
+                  "⚡ Velocidades: 100 Mbps (básico) hasta 10 Gbps (fibra óptica)"
+                ],
+                "protocolos": ["Ethernet", "DSL", "Coaxial", "Fibra Óptica"]
+              },
+              {
+                "id": 2,
+                "nombre": "Dispositivos Conectores 🎛️",
+                "resumen": "Los 'directores de tráfico' que organizan la comunicación",
+                "descripcion": "Equipos que deciden por dónde enviar la información, como un policía de tránsito para datos:",
+                "detallesTecnicos": [
+                  "📻 Switch básico: Conecta 4-8 dispositivos por cable (como una regleta de enchufes inteligente)",
+                  "📶 Router inalámbrico: Crea red WiFi y conecta a internet (el 'corazón' de tu red doméstica)",
+                  "🛡️ Firewall: Protege de intrusos (como cerradura digital)",
+                  "🌍 Módem: Traduce señales de internet a formato casero"
+                ],
+                "protocolos": ["WiFi 6", "PoE", "IPv4", "IPv6"]
+              },
+              {
+                "id": 3,
+                "nombre": "WiFi Hogareño 📶",
+                "resumen": "Internet sin cables como magia, pero con ciencia",
+                "descripcion": "Señales invisibles que viajan por el aire como ondas de radio, permitiendo conectar dispositivos sin cables. Funciona como una conversación donde el router grita datos y los dispositivos escuchan.",
+                "detallesTecnicos": [
+                  "🏠 Alcance típico: 30-50 metros en interiores (depende de paredes)",
+                  "📡 Frecuencias: 2.4 GHz (más alcance) vs 5 GHz (más velocidad)",
+                  "🔒 Seguridad: WPA3 (último estándar de cifrado)",
+                  "🔄 Canales: 11-13 'carriles' para evitar interferencias",
+                  "📉 Problemas comunes: Microondas interfiriendo (2.4 GHz), paredes gruesas bloqueando señal"
+                ],
+                "protocolos": ["802.11ac (WiFi 5)", "802.11ax (WiFi 6)", "WPS", "Hotspot"]
+              },
+              {
+                "id": 4,
+                "nombre": "Conexión Global 🌍",
+                "resumen": "El puente entre tu casa y el mundo",
+                "descripcion": "Como una autopista digital que conecta tu red doméstica con proveedores de internet, usando cables submarinos, torres de telefonía y satélites.",
+                "detallesTecnicos": [
+                  "🛰️ Tecnologías: Fibra óptica (90% del tráfico mundial), satélites Starlink (zonas rurales)",
+                  "⏳ Latencia: 20-300 ms (dependiendo de distancia)",
+                  "📦 Proveedores: Empresas que 'alquilan' acceso a internet (Ej: Movistar, AT&T)",
+                  "⚖️ Limitaciones: Ancho de banda compartido con vecinos en horas pico"
+                ],
+                "protocolos": ["PPPoE", "MPLS", "BGP", "SD-WAN"]
+              },
+              {
+                "id": 5,
+                "nombre": "Túneles Secretos 🕳️",
+                "resumen": "Enviar datos con capa de invisibilidad digital",
+                "descripcion": "Crea un pasadizo cifrado a través de internet público, como si pusieras una carta dentro de otra para que nadie vea su contenido.",
+                "detallesTecnicos": [
+                  "🔐 Cifrado AES-256: Matemáticas complejas que protegen datos",
+                  "🌐 Usos comunes: Teletrabajo seguro, evitar censura geográfica",
+                  "📉 Impacto velocidad: Reduce 10-20% por el cifrado extra",
+                  "⚠️ Riesgos: Proveedores VPN no confiables pueden robar datos"
+                ],
+                "protocolos": ["OpenVPN", "WireGuard", "L2TP/IPsec", "SSTP"]
+              },
+              {
+                "id": 6,
+                "nombre": "Cuernos de Señal 📡",
+                "resumen": "Orejas y bocas gigantes para redes inalámbricas",
+                "descripcion": "Dispositivos que captan/emiten ondas de radio. Determinan cómo se distribuye la señal en tu casa:",
+                "detallesTecnicos": [
+                  "🌀 Omnidireccionales: Emiten en 360° (como un foco en el techo)",
+                  "🎯 Direccionales: Enfocan señal en una dirección (como linterna)",
+                  "📏 Ganancia: 3-9 dBi (más alto = mayor alcance pero menor cobertura)",
+                  "🔧 DIY: Latas de aluminio pueden amplificar señal (truco casero)"
+                ],
+                "protocolos": ["MIMO", "Beamforming", "PoE (Alimentación por Ethernet)"]
+              },
+              {
+                "id": 7,
+                "nombre": "Conexiones Lógicas 🧠",
+                "resumen": "Los caminos invisibles que unen dispositivos globalmente",
+                "descripcion": "Como tener una conversación privada en una fiesta llena de gente: tu dispositivo encuentra rápidamente a otros aunque estén lejos",
+                "detallesTecnicos": [
+                  "🔒 VPN: Crea túneles seguros a través de internet público (como enviar cartas en sobres cifrados)",
+                  "🌐 Direccionamiento IP: Cada dispositivo tiene una 'matrícula' única (ej: 192.168.1.5)",
+                  "🔄 NAT: Permite compartir una IP pública entre varios dispositivos (como apartados de correos)",
+                  "📡 DNS: Traduce nombres de páginas web a direcciones numéricas (agenda telefónica digital)"
+                ],
+                "protocolos": ["OpenVPN", "IPsec", "DNS", "DHCP"]
+              }
+            ]
+          }
+        },
+        {
+          "modeloDestacado": {
+            "nombre": "Router Inalámbrico 📡",
+            "icono": { "tipo": "emoji", "valor": "🛰️" },
+            "enfoque": "Corazón de la red doméstica moderna",
+            "caracteristicas": [
+              "📶 2.4 GHz vs 5 GHz: Dos 'carriles' para diferentes dispositivos",
+              "🔁 Múltiples antenas: Mejor cobertura en toda la casa",
+              "🛡️ Firewall integrado: Protección contra intrusos",
+              "🌍 Compatibilidad IPv6: Futuro de internet"
+            ],
+            "casoEstudio": {
+              "titulo": "Mejora de Cobertura con Mesh",
+              "resultado": "Sistema mesh reduce zonas muertas en 80%"
+            }
+          }
+        },
+        {
+          "diagramaInteractivo": {
+            "titulo": "🗺️ Viaje de un Dato en Casa",
+            "estructura": [
+              "📱 Dispositivo → 📶 Señal WiFi → 🎛️ Router → 🌐 Módem → 🚀 Internet",
+              "🔁 Pasos inversos para recibir datos",
+              "⏱️ Tiempo promedio: 50ms para cargar una página web"
+            ],
+            "aplicacion": "Usado en 95% de hogares conectados",
+            "flujo": "▶️ Inicia en tu teléfono y viaja hasta servidores lejanos"
+          }
+        },
+        {
+          "iterativo": {
+            "titulo": "🛠️ Mantenimiento Preventivo",
+            "infografia": [
+              "🧹 Limpiar ventilación del router (polvo = sobrecalentamiento)",
+              "🔄 Actualizar firmware cada 3 meses",
+              "🔍 Escanear red mensualmente (¿dispositivos desconocidos?)",
+              "📶 Optimizar ubicación del router (centro de la casa)"
+            ],
+            "ejemplo": "Un router bien ubicado mejora cobertura en 40%"
+          }
+        },
+        {
+          "comparativa": {
+            "titulo": "📊 Topologías: Ventajas y Desventajas",
+            "modelos": [
+              {
+                "nombre": "Bus 🚌",
+                "confiabilidad": "1/10",
+                "facilidadInstalacion": "9/10",
+                "costo": "3/10"
+              },
+              {
+                "nombre": "Malla 🕸️",
+                "confiabilidad": "10/10",
+                "facilidadInstalacion": "4/10",
+                "costo": "8/10"
+              },
+              {
+                "comparativa": {
+                  "titulo": "📊 Topologías: ¿Cuál Elegir?",
+                  "modelos": [
+                    {
+                      "nombre": "Bus 🚌 (Antiguo)",
+                      "ventajas": ["Barato", "Fácil instalar"],
+                      "desventajas": ["Si falla un cable, toda la red cae", "Lento"],
+                      "usoActual": "0.5% redes modernas"
+                    },
+                    {
+                      "nombre": "Anillo 🔄 (Obsoleto)",
+                      "ventajas": ["Mejor que bus"],
+                      "desventajas": ["Un dispositivo roto detiene todo"],
+                      "usoActual": "Sistemas industriales legacy"
+                    },
+                    {
+                      "nombre": "Estrella 🌟 (Común)",
+                      "ventajas": ["Fácil diagnosticar fallos", "Escalable"],
+                      "desventajas": ["Dependencia del router central"],
+                      "usoActual": "85% redes domésticas"
+                    },
+                    {
+                      "nombre": "Malla 🕸️ (Avanzada)",
+                      "ventajas": ["Sin punto único de fallo", "Auto-reparable"],
+                      "desventajas": ["Cara", "Compleja configuración"],
+                      "usoActual": "Edificios grandes/empresas"
+                    },
+                    {
+                      "nombre": "Árbol 🌳 (Internet)",
+                      "ventajas": ["Jerarquía organizada", "Escalabilidad global"],
+                      "desventajas": ["Dependencia de backbone"],
+                      "usoActual": "Internet global"
+                    }
+                  ],
+                  "conclusion": "🔑 La malla sigue siendo útil para fábricas u hospitales donde la confiabilidad es crítica"
+                }
+              }
+            ],
+            "conclusion": "La malla sigue siendo útil para áreas grandes donde la confiabilidad es crítica"
+          }
+        }
+      ],
+      "imagen": "https://img.freepik.com/fotos-premium/descricao-detalhada-da-atividade-cerebral-e-dos-processos-de-aprendizagem-dentro-das-redes-neurais-conceito-actividade-cerebral-processos-de-aprendizagem-conexoes-sinapticas-neurotransmissores_918839-105390.jpg"
+    }
+  ]
