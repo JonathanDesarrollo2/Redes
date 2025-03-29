@@ -218,13 +218,13 @@
   },
     {
       "id": 2,
-      "titulo": "🏠 Topología de la Casa 1: La Red en Tu Hogar",
+      "titulo": "🏠 Topología de la Capa 1",
       "contenido": "Evolución de las conexiones domésticas desde cables simples hasta internet global",
       "contenidoCompleto": [
         {
           "introduccion": {
             "titulo": "📜 Historia de las Conexiones Domésticas",
-            "texto": "De los primeros cables a la magia invisible del WiFi: cómo conectamos dispositivos en casa",
+            "texto": "De los primeros cables a la energia del WiFi: cómo conectamos dispositivos en casa",
             "lineaTemporal": [
               "🔌 1970: Cableado en bus (como extensiones eléctricas)",
               "⭕ 1980: Conexiones en anillo (problemas de velocidad)",
@@ -268,7 +268,7 @@
               {
                 "id": 3,
                 "nombre": "WiFi Hogareño 📶",
-                "resumen": "Internet sin cables como magia, pero con ciencia",
+                "resumen": "Internet sin cables, transmitiendose en el aire",
                 "descripcion": "Señales invisibles que viajan por el aire como ondas de radio, permitiendo conectar dispositivos sin cables. Funciona como una conversación donde el router grita datos y los dispositivos escuchan.",
                 "detallesTecnicos": [
                   "🏠 Alcance típico: 30-50 metros en interiores (depende de paredes)",
