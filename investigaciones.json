@@ -415,5 +415,131 @@
         }
       ],
       "imagen": "https://img.freepik.com/fotos-premium/descricao-detalhada-da-atividade-cerebral-e-dos-processos-de-aprendizagem-dentro-das-redes-neurais-conceito-actividade-cerebral-processos-de-aprendizagem-conexoes-sinapticas-neurotransmissores_918839-105390.jpg"
+    }, {
+      "id": 3,
+      "titulo": "🔢 Direccionamiento IP y Operaciones Binarias",
+      "contenido": "Fundamentos de direcciones IPv4 y operaciones matemáticas en binario",
+      "contenidoCompleto": [
+        {
+          "introduccion": {
+            "titulo": "📜 Historia de las Direcciones IP",
+            "texto": "Evolución del sistema de numeración que permite identificar dispositivos en redes",
+            "lineaTemporal": [
+              "🔢 1981: IPv4 definido en RFC 791",
+              "🌐 1990: Explosión de internet y agotamiento de IPs",
+              "🛡 1993: Clases de redes (A, B, C) para optimización",
+              "📶 2012: Implementación masiva de NAT para conservar IPs",
+              "🚀 2017: Adopción gradual de IPv6"
+            ]
+          }
+        },
+        {
+          "capasDetalladas": {
+            "titulo": "🧮 Componentes del Direccionamiento IP",
+            "capas": [
+              {
+                "id": 1,
+                "nombre": "Estructura IPv4 🧩",
+                "resumen": "4 octetos decimales convertidos a 32 bits binarios",
+                "descripcion": "Cada dirección IP consiste en 4 números de 0-255 separados por puntos. Ej: 15.200.85.1 se convierte a:",
+                "detallesTecnicos": [
+                  "15 → 00001111 (8 bits)",
+                  "200 → 11001000",
+                  "85 → 01010101",
+                  "1 → 00000001",
+                  "Completo: 00001111.11001000.01010101.00000001"
+                ],
+                "protocolos": ["IPv4", "Subnetting", "CIDR"]
+              },
+              {
+                "id": 2,
+                "nombre": "Clases de Redes 🎓",
+                "resumen": "División histórica para diferentes tamaños de red",
+                "descripcion": "Sistema original para segmentar redes usando máscaras:",
+                "detallesTecnicos": [
+                  "Clase A (Grandes): 255.0.0.0 → 16M hosts",
+                  "Clase B (Medianas): 255.255.0.0 → 65k hosts",
+                  "Clase C (Pequeñas): 255.255.255.0 → 254 hosts",
+                  "Ejemplo Clase B: 172.16.0.0/16"
+                ],
+                "protocolos": ["ARP", "ICMP"]
+              },
+              {
+                "id": 3,
+                "nombre": "Host vs Red 🖥️",
+                "resumen": "Identificación de dispositivos y segmentos de red",
+                "descripcion": "La máscara determina qué parte identifica la red y cuál el host:",
+                "detallesTecnicos": [
+                  "Red: Parte fija (como código postal)",
+                  "Host: Parte variable (como número de casa)",
+                  "Ejemplo: 192.168.1.50/24 → Red=192.168.1.0, Host=50"
+                ],
+                "protocolos": ["DHCP", "DNS"]
+              }
+            ]
+          }
+        },{
+          "operacionBinaria": {
+            "titulo": "🖩 Suma Binaria - Ejercicio Resuelto",
+            "operandos": [
+              "1 1 0 1 1 0 1 (109)",
+              "1 1 1 0 0 1 0 (114)",
+              "1 0 1 1 1 0 1 (93)",
+              "0 1 1 1 1 1 0 (62)"
+            ],
+            "procedimiento": [
+              "Suma vertical con acarreos:",
+              "Columna 1: 1+0+1+0 = 10₂ → 0, acarreo 1",
+              "Columna 2: 0+1+0+1+1 = 11₂ → 1, acarreo 1",
+              "Columna 3: 1+0+1+1+1 = 100₂ → 0, acarreo 10",
+              "Columna 4: 1+1+1+1+10 = 110₂ → 0, acarreo 11",
+              "Columna 5: 0+1+1+1+11 = 110₂ → 0, acarreo 11",
+              "Columna 6: 1+1+0+1+11 = 110₂ → 0, acarreo 11",
+              "Columna 7: 1+1+1+0+11 = 110₂ → 0, acarreo 11",
+              "Bits finales: 11 → 1 1"
+            ],
+            "resultado": "110000110 (378 en decimal)",
+            "comprobacion": "109 + 114 + 93 + 62 = 378 ✓"
+          }
+        },
+        {
+          "modeloDestacado": {
+            "nombre": "Calculadora Binaria 🔢",
+            "icono": { "tipo": "emoji", "valor": "🧮" },
+            "enfoque": "Herramienta esencial para operaciones de red",
+            "caracteristicas": [
+              "Conversión decimal-binario-hexadecimal",
+              "Operaciones AND/OR para subredes",
+              "Cálculo de máscaras variables",
+              "Detección de errores de desbordamiento"
+            ],
+            "casoEstudio": {
+              "titulo": "Error de cálculo en subnetting",
+              "resultado": "Direccionamiento incorrecto en 15% de redes pequeñas"
+            }
+          }
+        },
+        {
+          "comparativa": {
+            "titulo": "📊 Clases de Red vs CIDR",
+            "modelos": [
+              {
+                "nombre": "Clase A 🅰",
+                "ventajas": ["16 millones de hosts", "Simple administración"],
+                "desventajas": ["Desperdicio de espacio", "Limitado a 126 redes"],
+                "usoActual": "Grandes corporaciones (IBM, MIT)"
+              },
+              {
+                "nombre": "CIDR 🆕",
+                "ventajas": ["Uso eficiente de IPs", "Máscaras variables"],
+                "desventajas": ["Complejidad en cálculo", "Requiere herramientas"],
+                "usoActual": "95% de redes modernas"
+              }
+            ],
+            "conclusion": "🔑 CIDR revolucionó el uso de IPs permitiendo asignación precisa"
+          }
+        }
+      ],
+      "imagen": "https://example.com/nueva-imagen-ip-binaria.jpg"
     }
   ]

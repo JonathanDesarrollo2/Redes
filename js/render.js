@@ -80,6 +80,8 @@ class RenderManager {
             return this.renderComparativa(data);
           case "seleccion":
             return this.renderSeleccion(data);
+          case "operacionBinaria":
+            return this.renderOperacionBinaria(data);
           default:
             return `<div class="text-red-500">Componente no reconocido: ${JSON.stringify(data)}</div>`;
         }
@@ -109,6 +111,52 @@ class RenderManager {
           <p class="text-gray-600 text-lg leading-relaxed mb-6">${data.texto}</p>
           ${Componentes.timeline(data.lineaTemporal)}
         </div>
+      </section>
+    `;
+  }
+  renderOperacionBinaria(data) {
+    return `
+      <div class="bg-amber-50/90 p-6 rounded-xl border-2 border-amber-300/50 shadow-md">
+        <h3 class="text-2xl font-bold text-amber-900 mb-4">${data.titulo}</h3>
+        <div class="grid grid-cols-7 gap-2 mb-6 font-mono text-center">
+          ${data.operandos.map(op => `
+            <div class="col-span-7 text-left text-amber-800/90 mb-1">${op}</div>
+          `).join('')}
+          <div class="col-span-7 border-t-2 border-amber-300/70 my-2"></div>
+          ${data.procedimiento.map((step, i) => `
+            <div class="col-span-7 text-sm text-amber-700/90 ${i < 2 ? 'font-bold' : ''}">${step}</div>
+          `).join('')}
+        </div>
+        <div class="mt-4 p-4 bg-amber-200/40 rounded-lg">
+          <span class="block font-mono text-xl text-amber-900">${data.resultado}</span>
+          <span class="text-sm text-amber-700">${data.comprobacion}</span>
+        </div>
+      </div>
+    `;
+  }
+  
+  renderCapasDetalladas(data) {
+    // Versión actualizada con soporte para .map y nuevos estilos
+    return `
+      <section class="space-y-8">
+        <h2 class="text-3xl font-bold text-amber-800/90 mb-6">${data.titulo}</h2>
+        ${data.capas.map(capa => `
+          <div class="bg-amber-50/60 p-6 rounded-xl border border-amber-200/30 mb-6">
+            <h3 class="text-xl font-semibold text-amber-700/90 mb-3">${capa.nombre}</h3>
+            <p class="text-amber-600/90 mb-4">${capa.resumen}</p>
+            <div class="space-y-4 ml-4">
+              <div class="bg-white/90 p-4 rounded-lg shadow-sm">
+                ${capa.detallesTecnicos.map(d => `<p class="text-amber-800/90 mb-2">${d}</p>`).join('')}
+              </div>
+              <div class="bg-amber-100/40 p-3 rounded-md">
+                <strong class="text-amber-800/90">Protocolos:</strong>
+                ${capa.protocolos.map(p => `
+                  <span class="bg-amber-200/50 text-amber-900 px-2 py-1 rounded-md text-sm mr-2">${p}</span>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `).join('')}
       </section>
     `;
   }
