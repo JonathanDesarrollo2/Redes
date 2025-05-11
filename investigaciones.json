@@ -541,5 +541,184 @@
         }
       ],
       "imagen": "https://th.bing.com/th/id/OIP.bYzyBRgMOVB-f0ri8u57cwHaEK?rs=1&pid=ImgDetMain"
+    },{
+  "id": 4,
+  "titulo": "🌐 Evolución del Direccionamiento IP: De IPv3 a IPv6 - Guía Maestra Extendida",
+  "contenido": "Análisis exhaustivo de protocolos IP históricos y modernos con énfasis en arquitectura, transición y operaciones avanzadas",
+  "contenidoCompleto": [
+    {
+      "introduccion": {
+        "titulo": "⚡ Cronología Detallada de la Evolución IP",
+        "texto": "Estudio técnico-histórico desde los primeros experimentos de red hasta la era de Internet de las Cosas",
+        "lineaTemporal": [
+          "🔢 1975: Primeros experimentos con IPv3 en laboratorios DARPA usando direcciones de 24 bits",
+          "🔄 1982: Crisis de direcciones IPv3 con solo 4.3 millones de hosts disponibles globalmente",
+          "💥 1991: Última asignación IPv3 Clase B a IBM (128.0.0.0/16)",
+          "📜 1995: RFC 1883 - Primer borrador oficial de IPv6",
+          "🌍 2003: Japón implementa primera red nacional dual-stack IPv3/IPv6",
+          "📡 2010: Verificación completa de compatibilidad IPv6 en protocolos 3GPP para móviles",
+          "🔓 2015: Microsoft Azure habilita IPv6 nativo en todos sus centros de datos",
+          "📶 2020: 65% del tráfico móvil global utiliza IPv6 según Akamai",
+          "🛰️ 2024: Satélites Starlink operan exclusivamente con IPv6 para gestión de constelación"
+        ]
+      }
+    },
+    {
+      "capasDetalladas": {
+        "titulo": "🔍 Arquitectura Profunda: Diseño de Direcciones IP",
+        "capas": [
+          {
+            "id": 1,
+            "nombre": "IPv3 - Análisis Forense 🕵️",
+            "resumen": "Reverse engineering de implementaciones históricas",
+            "descripcion": "Desglose técnico de paquete IPv3 en red Class B:",
+            "detallesTecnicos": [
+              "Dirección muestra: 200.15.1.100/24",
+              "Descomposición binaria completa:",
+              "Octeto 1: 200 → 11001000 (Network ID)",
+              "Octeto 2: 15 → 00001111 (Subnet ID)",
+              "Octetos 3-4: 1.100 → 00000001.01100100 (Host ID)",
+              "Máscara hexadecimal: 0xFFFFFF00",
+              "Broadcast address: 200.15.1.255",
+              "Dirección de red: 200.15.1.0",
+              "Rango válido hosts: 200.15.1.1 - 200.15.1.254",
+              "Limitaciones: Colisiones frecuentes en NAT >500 hosts"
+            ],
+            "protocolos": ["BOOTP", "RARP", "IGMPv1", "X.25"]
+          },
+          {
+            "id": 2,
+            "nombre": "IPv6 - Ingeniería de Direcciones 🧪",
+            "resumen": "Diseño de esquemas de direccionamiento jerárquico",
+            "descripcion": "Metodología para planificación de direcciones globales:",
+            "detallesTecnicos": [
+              "Estructura recomendada por IETF:",
+              "Global Routing Prefix (48 bits): 2001:db8:cad5::/48",
+              "Subnet ID (16 bits): ::/64 → 65536 subredes disponibles",
+              "Interface ID (64 bits): EUI-64 modificado",
+              "Ejemplo completo:",
+              "2001:db8:cad5:01a3:020f:22ff:fe33:4455/64",
+              "Reglas de compresión estrictas:",
+              "1. Solo un grupo :: por dirección",
+              "2. Eliminar ceros iniciales en cada hexteto",
+              "3. Letras siempre en minúsculas según RFC 5952",
+              "Error crítico: AEO1:0:0:AB25::0E01 (doble compresión)",
+              "Formato válido: AEO1::AB25:0:0:0E01"
+            ],
+            "protocolos": ["MLDv2", "PIM-SSM", "SEND", "QoS IPv6"]
+          },
+          {
+            "id": 3,
+            "nombre": "Orquestación de Redes Autónomas 🤖",
+            "resumen": "Automatización de DHCPv6 y DNS en entornos críticos",
+            "descripcion": "Flujo completo de asignación dinámica con redundancia:",
+            "detallesTecnicos": [
+              "Topología de ejemplo:",
+              "- 2 servidores DHCPv6 en cluster (activo/pasivo)",
+              "- 3 servidores DNS Anycast (DNS.unefa.6)",
+              "Parámetros DHCPv6 avanzados:",
+              "Option 23: DNS Search List → dominio.unefa",
+              "Option 24: Domain Name → unefa.edu.ve",
+              "Option 52: MSL → 14400 segundos (4 horas)",
+              "Option 25: PD (Prefix Delegation) → /56 para routers CPE",
+              "Proceso SLAAC:",
+              "1. Router Advertisement (RA) con flags M=0, O=1",
+              "2. Autoconfiguración dirección link-local",
+              "3. Solicitud DNS mediante DHCPv6 informacional",
+              "Monitorización:",
+              "- Captura paquetes ICMPv6 tipo 133-137",
+              "- Análisis DUID (DHCP Unique Identifier)"
+            ],
+            "protocolos": ["Secure Neighbor Discovery", "RDNSS", "DNSSEC", "LLMNR"]
+          }
+        ]
+      }
+    },
+    {
+      "modeloDestacado": {
+        "nombre": "Suite de Gestión IP Empresarial 🏢",
+        "icono": { "tipo": "emoji", "valor": "🔧" },
+        "enfoque": "Plataforma unificada para redes multi-protocolo",
+        "caracteristicas": [
+          "Algoritmo de detección de duplicados usando DAD (Duplicate Address Detection)",
+          "Generación automática de RAs (Router Advertisements) con prioridad configurable",
+          "Gestión de plazos DHCPv6: T1 (renew) = 0.5*MSL, T2 (rebind) = 0.8*MSL",
+          "Integración con RRDtool para graficación de flujos IPv6",
+          "Soporte para múltiples scopes DHCPv6:",
+          " - Scope link-local: fe80::/10",
+          " - Scope global: 2000::/3",
+          " - Scope unique-local: fc00::/7",
+          "Validación sintáctica de direcciones según RFCs 4291 y 5952"
+        ],
+        "casoEstudio": {
+          "titulo": "Migración Masiva en Telecomunicaciones",
+          "resultado": [
+            "Escenario: 500,000 CPEs dual-stack",
+            "Implementación:",
+            "- Fase 1: DHCPv6 con Prefix Delegation /60",
+            "- Fase 2: DNS64/NAT64 para compatibilidad legacy",
+            "- Fase 3: Retiro progresivo IPv3 en 18 meses",
+            "Métricas:",
+            "▶ 99.998% disponibilidad durante transición",
+            "▶ 0.2% pérdida paquetes en peak traffic",
+            "▶ Reducción 40% en tickets de soporte"
+          ]
+        }
+      }
+    },
+    {
+      "comparativa": {
+        "titulo": "📊 Estudio Cuantitativo: Impacto de IPv6",
+        "modelos": [
+          {
+            "nombre": "IPv3 - Limitaciones Críticas ⚠️",
+            "ventajas": [
+              "Legado: 98% dispositivos base soportan IPv3",
+              "Diagnóstico: Herramientas maduras (traceroute, netstat)",
+              "Documentación: 40 años de conocimiento acumulado"
+            ],
+            "desventajas": [
+              "Escalabilidad: Máximo teórico 4.3B direcciones",
+              "Seguridad: Requiere NAT+Firewall para protección básica",
+              "Coste: $25-50 por dirección IPv3 en mercado secundario",
+              "Complejidad: Tablas de routing >500k entradas"
+            ],
+            "casoUso": [
+              "Dispositivos M2M antiguos",
+              "Sistemas SCADA industriales",
+              "Equipos médicos con certificación FDA pre-2010"
+            ]
+          },
+          {
+            "nombre": "IPv6 - Paradigma Moderno 💡",
+            "ventajas": [
+              "Capacidad: 3.4x10^38 direcciones únicas",
+              "Eficiencia: Encabezados fijos de 40 bytes vs IPv3 variable",
+              "Movilidad: MIPv6 con roaming sin pérdida de conexión",
+              "Seguridad: IPSec obligatorio en implementaciones nativas",
+              "Coste: $0 por dirección (autoconfiguración)"
+            ],
+            "desventajas": [
+              "Fragmentación: PMTU Discovery requerido",
+              "Legado: 12% dispositivos IoT aún sin soporte",
+              "Monitorización: Necesidad de nuevas herramientas (ipv6calc, ndpmon)"
+            ],
+            "casoUso": [
+              "Smart Cities: >1 millón de sensores/km²",
+              "5G NSA/SA: Rebanadas de red (network slicing)",
+              "Blockchain: Nodos globales con direccionamiento único"
+            ]
+          }
+        ],
+        "conclusion": [
+          "🔥 Tipping Point: 2025 como año clave para retiro IPv3 en backbones",
+          "💼 ROI: Migración a IPv6 reduce TCO en 35% a 5 años",
+          "🔐 Seguridad: Reducción 68% en ataques DDoS gracias a IPSec nativo",
+          "📚 Recomendación: Implementación dual-stack hasta 2030 con política de sunset IPv3"
+        ]
+      }
     }
+  ],
+  "imagen": "https://example.com/ipv6-enterprise-deployment.png"
+}
   ]
