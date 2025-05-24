@@ -720,5 +720,188 @@
     }
   ],
   "imagen": "https://www.stackscale.com/wp-content/uploads/2020/07/ipv6-que-es-stackscale.jpg"
+},{
+  "id": 5,
+  "titulo": "🌍 De las Primeras Redes Móviles a la Nube Moderna: Guía Práctica desde 0G hasta 6G",
+  "contenido": "Explicación detallada de cómo funcionan las redes actuales en servicios en la nube como AWS, para todos los niveles técnicos",
+  "contenidoCompleto": [
+    {
+      "introduccion": {
+        "titulo": "📶 La Evolución de las Comunicaciones Móviles",
+        "texto": "Recorrido histórico desde los primeros teléfonos inalámbricos hasta internet ultrarrápido",
+        "lineaTemporal": [
+          "📻 Era 0G (1970s): Radioteléfonos grandes como los de los coches de los 80s - Solo voz y operador manual",
+          "📞 1G (1980s): Primeros móviles tipo 'ladrillo' - Llamadas con sonido de baja calidad y sin seguridad",
+          "📟 2G (1990s): Móviles pequeños con pantalla - Primeros mensajes de texto y juegos simples",
+          "📱 3G (2000s): Internet básico en móviles - Podías ver fotos y videos de baja calidad",
+          "🌐 4G (2010s): Internet rápido para ver películas en streaming y video llamadas HD",
+          "⚡ 5G (Actualidad): Velocidades para descargar películas en segundos - Ideal para realidad virtual",
+          "🧠 6G (Futuro): Conexión instantánea para robots y hologramas - Internet que piensa por sí mismo"
+        ]
+      }
+    },
+    {
+      "capasDetalladas": {
+        "titulo": "🛠️ Cómo Construir una Red en la Nube de AWS",
+        "capas": [
+          {
+            "id": 1,
+            "nombre": "Creando tu Red Virtual Personalizada",
+            "resumen": "Paso a paso para diseñar una red segura en AWS",
+            "descripcion": "Cómo organizar tu espacio de red como bloques de construcción:",
+            "detallesTecnicos": [
+              "Direcciones IP organizadas:",
+              "- Bloque principal: 172.28.0.0/16 (65k direcciones IPv4)",
+              "- Bloque adicional: 2001:db8::/56 (Millones de direcciones IPv6)",
+              "Partes clave de la red:",
+              " 1. Puerta de Internet: La salida a la web pública",
+              " 2. Puerta NAT: Permite a servidores privados conectarse a internet de forma segura",
+              " 3. Reglas de tráfico: Como semáforos para controlar qué datos pasan",
+              "Ejemplo práctico:",
+              "Crear red con 2 tipos de IPs (antiguas y nuevas):",
+              "Herramienta AWS → Elegir 'Crear VPC' → Activar IPv4 e IPv6"
+            ],
+            "protocolos": ["Comunicación entre oficinas", "Túneles seguros", "Cifrado de datos"]
+          },
+          {
+            "id": 2,
+            "nombre": "Configurando Tarjetas de Red Virtuales",
+            "resumen": "Cómo asignar direcciones IP a tus servidores en la nube",
+            "descripcion": "Administrar las 'placas de red' de tus máquinas virtuales:",
+            "detallesTecnicos": [
+              "Tipos de configuraciones:",
+              " 1. Básica: Hasta 5 IPs por servidor (3 antiguas + 2 nuevas)",
+              " 2. Avanzada: Para aplicaciones que necesitan máxima velocidad",
+              "Cómo agregar IPs nuevas (IPv6):",
+              "Menú de AWS → Redes → Asignar nuevas direcciones → Elegir cantidad",
+              "Consejos útiles:",
+              "- Usar direcciones temporales para servicios que cambian seguido",
+              "- Bloquear acceso a configuraciones sensibles desde internet",
+              "Ejemplo visual:",
+              "Servidor web: IP pública 203.0.113.5 y nueva IP 2001:db8::1"
+            ],
+            "protocolos": ["Aceleración de red", "Conexiones directas a hardware"]
+          },
+          {
+            "id": 3,
+            "nombre": "Balanceo de Carga para Sitios Web Populares",
+            "resumen": "Repartir el tráfico entre múltiples servidores",
+            "descripcion": "Cómo evitar caídas cuando hay muchos visitantes:",
+            "detallesTecnicos": [
+              "Componentes principales:",
+              " 1. Balanceador principal: Decide qué servidor atiende cada solicitud",
+              " 2. Grupos de servidores: Conjunto de máquinas idénticas listas para trabajar",
+              " 3. Reglas de seguridad: Protección contra ataques y tráfico malicioso",
+              "Configuración paso a paso:",
+              "1. Crear balanceador en AWS Console",
+              "2. Elegir 'Dual Stack' para soportar IPs antiguas y nuevas",
+              "3. Conectar con tus servidores web y base de datos",
+              "4. Activar auto-escalado: Añade servidores automáticamente cuando hay mucha demanda",
+              "Ejemplo real:",
+              "Tienda online en Black Friday - De 10 a 100 servidores automáticamente"
+            ],
+            "protocolos": ["HTTP/3 (último estándar web)", "Conexiones persistentes para apps en tiempo real"]
+          }
+        ]
+      }
+    },
+    {
+      "modeloDestacado": {
+        "nombre": "Arquitectura para el Futuro con AWS",
+        "icono": { "tipo": "emoji", "valor": "🚀" },
+        "enfoque": "Sistema preparado para nuevas tecnologías como el 6G",
+        "caracteristicas": [
+          "Funcionalidades clave:",
+          "- Escalado automático según número de usuarios",
+          "- Servidores cercanos a los usuarios finales (edge computing)",
+          "- Soporte para nuevos dispositivos inteligentes (IoT)",
+          "Cómo maneja diferentes necesidades:",
+          " 1. Zona de alta velocidad: Para video 8K y realidad virtual",
+          " 2. Zona ultra estable: Para operaciones médicas remotas",
+          " 3. Zona masiva: Para millones de sensores en ciudades inteligentes",
+          "Herramientas inteligentes:",
+          "- Predicción de tráfico usando inteligencia artificial",
+          "- Reparación automática de fallos",
+          "- Monitorización en tiempo real con paneles visuales"
+        ],
+        "casoEstudio": {
+          "titulo": "Implementación en una Gran Ciudad",
+          "resultado": [
+            "Situación inicial:",
+            "- 500,000 dispositivos conectados",
+            "- Problemas de lentitud en horas pico",
+            "Solución aplicada:",
+            "1. Instalar servidores locales en postes de luz inteligentes",
+            "2. Usar balanceadores de carga en la nube",
+            "3. Migrar a direcciones IP modernas (IPv6)",
+            "Resultados obtenidos:",
+            "▶ Velocidad 10 veces mayor en aplicaciones móviles",
+            "▶ 0 caídas durante eventos masivos",
+            "▶ Ahorro de 40% en costes de mantenimiento",
+            "Lecciones importantes:",
+            "- Las direcciones IP nuevas permiten conectar más dispositivos",
+            "- La nube híbrida (local + internet) ofrece mejor estabilidad"
+          ]
+        }
+      }
+    },
+    {
+      "comparativa": {
+        "titulo": "⚖️ Comparando Sistemas Antiguos y Modernos",
+        "modelos": [
+          {
+            "nombre": "Sistema Tradicional (IPv4)",
+            "ventajas": [
+              "Funciona con equipos antiguos sin cambios",
+              "Fácil de configurar para redes pequeñas",
+              "Muchos tutoriales disponibles"
+            ],
+            "desventajas": [
+              "Límite de dispositivos conectados",
+              "Requiere equipos extra para seguridad",
+              "Costes adicionales por cada dirección IP"
+            ],
+            "casoUso": [
+              "Oficinas pequeñas",
+              "Sistemas heredados (cámaras de seguridad antiguas)",
+              "Redes temporales para eventos"
+            ]
+          },
+          {
+            "nombre": "Sistema Moderno (IPv6)",
+            "ventajas": [
+              "Permite conectar millones de dispositivos",
+              "Más rápido al eliminar pasos intermedios",
+              "Seguridad integrada desde el diseño",
+              "Sin costes extra por direcciones"
+            ],
+            "desventajas": [
+              "Requiere actualizar algunos equipos",
+              "Menos personal familiarizado con la tecnología",
+              "Algunas apps antiguas necesitan ajustes"
+            ],
+            "casoUso": [
+              "Ciudades inteligentes con muchos sensores",
+              "Aplicaciones de realidad aumentada",
+              "Grandes empresas con sedes globales"
+            ]
+          }
+        ],
+        "conclusion": [
+          "📅 Plan recomendado:",
+          "1. Primeros 6 meses: Probar ambos sistemas en paralelo",
+          "2. Próximo año: Migrar servicios principales al nuevo sistema",
+          "3. A largo plazo: Usar solo el sistema moderno donde sea posible",
+          "💡 Consejos clave:",
+          "- Capacitar al equipo en nuevas tecnologías",
+          "- Usar herramientas de traducción para sistemas antiguos",
+          "- Monitorizar progreso con métricas claras",
+          "🔮 Visión futura:",
+          "Para 2030, el 90% de internet usará el sistema moderno"
+        ]
+      }
+    }
+  ],
+  "imagen": "https://codigital.ec/wp-content/uploads/2023/01/img_aws.jpg"
 }
   ]
