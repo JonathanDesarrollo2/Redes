@@ -722,186 +722,177 @@
   "imagen": "https://www.stackscale.com/wp-content/uploads/2020/07/ipv6-que-es-stackscale.jpg"
 },{
   "id": 5,
-  "titulo": "🌍 De las Primeras Redes Móviles a la Nube Moderna: Guía Práctica desde 0G hasta 6G",
-  "contenido": "Explicación detallada de cómo funcionan las redes actuales en servicios en la nube como AWS, para todos los niveles técnicos",
+  "titulo": "🚀 Dominando Redes en AWS: Guía Completa de VPC, IPv6 y Balanceadores",
+  "contenido": "Implementación profesional de infraestructuras cloud en AWS con enfoque en redes modernas y alta disponibilidad",
   "contenidoCompleto": [
     {
       "introduccion": {
-        "titulo": "📶 La Evolución de las Comunicaciones Móviles",
-        "texto": "Recorrido histórico desde los primeros teléfonos inalámbricos hasta internet ultrarrápido",
+        "titulo": "📶 Breve Contexto Tecnológico",
+        "texto": "Evolución de conectividad desde redes básicas hasta cloud avanzado",
         "lineaTemporal": [
-          "📻 Era 0G (1970s): Radioteléfonos grandes como los de los coches de los 80s - Solo voz y operador manual",
-          "📞 1G (1980s): Primeros móviles tipo 'ladrillo' - Llamadas con sonido de baja calidad y sin seguridad",
-          "📟 2G (1990s): Móviles pequeños con pantalla - Primeros mensajes de texto y juegos simples",
-          "📱 3G (2000s): Internet básico en móviles - Podías ver fotos y videos de baja calidad",
-          "🌐 4G (2010s): Internet rápido para ver películas en streaming y video llamadas HD",
-          "⚡ 5G (Actualidad): Velocidades para descargar películas en segundos - Ideal para realidad virtual",
-          "🧠 6G (Futuro): Conexión instantánea para robots y hologramas - Internet que piensa por sí mismo"
+          "0G-3G: Primeras redes móviles (solo voz y datos limitados)",
+          "4G/5G: Internet rápido para aplicaciones móviles",
+          "Cloud: AWS como plataforma para desplegar redes globales"
         ]
       }
     },
     {
       "capasDetalladas": {
-        "titulo": "🛠️ Cómo Construir una Red en la Nube de AWS",
+        "titulo": "🛠️ Configuración Profesional en AWS",
         "capas": [
           {
             "id": 1,
-            "nombre": "Creando tu Red Virtual Personalizada",
-            "resumen": "Paso a paso para diseñar una red segura en AWS",
-            "descripcion": "Cómo organizar tu espacio de red como bloques de construcción:",
+            "nombre": "Creando tu Red Virtual (VPC)",
+            "resumen": "Diseña una red privada en la nube como experto",
+            "descripcion": "Pasos clave para crear una VPC segura y escalable:",
             "detallesTecnicos": [
-              "Direcciones IP organizadas:",
-              "- Bloque principal: 172.28.0.0/16 (65k direcciones IPv4)",
-              "- Bloque adicional: 2001:db8::/56 (Millones de direcciones IPv6)",
-              "Partes clave de la red:",
-              " 1. Puerta de Internet: La salida a la web pública",
-              " 2. Puerta NAT: Permite a servidores privados conectarse a internet de forma segura",
-              " 3. Reglas de tráfico: Como semáforos para controlar qué datos pasan",
-              "Ejemplo práctico:",
-              "Crear red con 2 tipos de IPs (antiguas y nuevas):",
-              "Herramienta AWS → Elegir 'Crear VPC' → Activar IPv4 e IPv6"
+              "1. Elegir rango IP principal:",
+              "   - IPv4: 10.0.0.0/16 (65,536 direcciones)",
+              "   - IPv6: Asignación automática de AWS /56",
+              "2. Crear subredes públicas/privadas:",
+              "   - Ejemplo: 10.0.1.0/24 para servidores web",
+              "   - Habilitar IPv6 con checkbox en consola AWS",
+              "3. Configurar puertas de enlace:",
+              "   - Internet Gateway para acceso público",
+              "   - NAT Gateway para recursos privados",
+              "4. Tablas de rutas:",
+              "   - Ruta default 0.0.0.0/0 → igw-xxxx",
+              "   - Ruta IPv6 ::/0 → igw-xxxx"
             ],
-            "protocolos": ["Comunicación entre oficinas", "Túneles seguros", "Cifrado de datos"]
+            "protocolos": ["TCP/IP", "ICMP", "HTTP/S"]
           },
           {
             "id": 2,
-            "nombre": "Configurando Tarjetas de Red Virtuales",
-            "resumen": "Cómo asignar direcciones IP a tus servidores en la nube",
-            "descripcion": "Administrar las 'placas de red' de tus máquinas virtuales:",
+            "nombre": "Tarjetas de Red y Direcciones IP",
+            "resumen": "Administración avanzada de interfaces de red",
+            "descripcion": "Cómo asignar IPs en instancias EC2:",
             "detallesTecnicos": [
-              "Tipos de configuraciones:",
-              " 1. Básica: Hasta 5 IPs por servidor (3 antiguas + 2 nuevas)",
-              " 2. Avanzada: Para aplicaciones que necesitan máxima velocidad",
-              "Cómo agregar IPs nuevas (IPv6):",
-              "Menú de AWS → Redes → Asignar nuevas direcciones → Elegir cantidad",
-              "Consejos útiles:",
-              "- Usar direcciones temporales para servicios que cambian seguido",
-              "- Bloquear acceso a configuraciones sensibles desde internet",
-              "Ejemplo visual:",
-              "Servidor web: IP pública 203.0.113.5 y nueva IP 2001:db8::1"
+              "Tipos de direcciones:",
+              " - IPv4 pública: Asignada automáticamente",
+              " - IPv4 privada: Para comunicación interna",
+              " - IPv6: Habilitar en configuración de subred",
+              "Asignación múltiple:",
+              " - Hasta 5 IPs por interfaz (v4 + v6)",
+              "Ejemplo CLI:",
+              "aws ec2 assign-private-ip-addresses --network-interface-id eni-12345 --private-ip-addresses 10.0.0.25"
             ],
-            "protocolos": ["Aceleración de red", "Conexiones directas a hardware"]
+            "protocolos": ["DHCP", "Ethernet", "ARP"]
           },
           {
             "id": 3,
-            "nombre": "Balanceo de Carga para Sitios Web Populares",
-            "resumen": "Repartir el tráfico entre múltiples servidores",
-            "descripcion": "Cómo evitar caídas cuando hay muchos visitantes:",
+            "nombre": "Balanceo de Carga en AWS",
+            "resumen": "Distribución inteligente de tráfico web",
+            "descripcion": "Configurar Application Load Balancer:",
             "detallesTecnicos": [
-              "Componentes principales:",
-              " 1. Balanceador principal: Decide qué servidor atiende cada solicitud",
-              " 2. Grupos de servidores: Conjunto de máquinas idénticas listas para trabajar",
-              " 3. Reglas de seguridad: Protección contra ataques y tráfico malicioso",
-              "Configuración paso a paso:",
-              "1. Crear balanceador en AWS Console",
-              "2. Elegir 'Dual Stack' para soportar IPs antiguas y nuevas",
-              "3. Conectar con tus servidores web y base de datos",
-              "4. Activar auto-escalado: Añade servidores automáticamente cuando hay mucha demanda",
-              "Ejemplo real:",
-              "Tienda online en Black Friday - De 10 a 100 servidores automáticamente"
+              "1. Crear balanceador:",
+              "   - Elegir 'dualstack' para IPv4/IPv6",
+              "   - Seleccionar todas las zonas AWS",
+              "2. Configurar grupos objetivo:",
+              "   - Registrar instancias EC2",
+              "   - Establecer health checks HTTP",
+              "3. Reglas de enrutamiento:",
+              "   - /images → Servidores de almacenamiento",
+              "   - /api → Cluster de microservicios",
+              "Monitorización:",
+              " - Ver métricas en CloudWatch",
+              " - Habilitar logs de acceso"
             ],
-            "protocolos": ["HTTP/3 (último estándar web)", "Conexiones persistentes para apps en tiempo real"]
+            "protocolos": ["HTTP/2", "SSL/TLS", "WebSockets"]
           }
         ]
       }
     },
     {
       "modeloDestacado": {
-        "nombre": "Arquitectura para el Futuro con AWS",
-        "icono": { "tipo": "emoji", "valor": "🚀" },
-        "enfoque": "Sistema preparado para nuevas tecnologías como el 6G",
+        "nombre": "Arquitectura Hibrida AWS",
+        "icono": { "tipo": "emoji", "valor": "🔌" },
+        "enfoque": "Combinando IPv4 e IPv6 en producción",
         "caracteristicas": [
-          "Funcionalidades clave:",
-          "- Escalado automático según número de usuarios",
-          "- Servidores cercanos a los usuarios finales (edge computing)",
-          "- Soporte para nuevos dispositivos inteligentes (IoT)",
-          "Cómo maneja diferentes necesidades:",
-          " 1. Zona de alta velocidad: Para video 8K y realidad virtual",
-          " 2. Zona ultra estable: Para operaciones médicas remotas",
-          " 3. Zona masiva: Para millones de sensores en ciudades inteligentes",
-          "Herramientas inteligentes:",
-          "- Predicción de tráfico usando inteligencia artificial",
-          "- Reparación automática de fallos",
-          "- Monitorización en tiempo real con paneles visuales"
+          "Componentes clave:",
+          "- VPC con subredes públicas (IPv4/IPv6)",
+          "- Grupos de seguridad por capas",
+          "- NAT Gateway para compatibilidad legacy",
+          "Flujo de tráfico:",
+          "1. Usuarios → ALB dual-stack",
+          "2. ALB → Instancias EC2 según protocolo",
+          "3. Base de datos en subred privada (solo IPv4)",
+          "Herramientas AWS:",
+          "- VPC Flow Logs para auditoría",
+          "- Network Manager para visualización",
+          "- Transit Gateway para conexiones complejas"
         ],
         "casoEstudio": {
-          "titulo": "Implementación en una Gran Ciudad",
+          "titulo": "Migración de E-commerce a IPv6",
           "resultado": [
             "Situación inicial:",
-            "- 500,000 dispositivos conectados",
-            "- Problemas de lentitud en horas pico",
-            "Solución aplicada:",
-            "1. Instalar servidores locales en postes de luz inteligentes",
-            "2. Usar balanceadores de carga en la nube",
-            "3. Migrar a direcciones IP modernas (IPv6)",
-            "Resultados obtenidos:",
-            "▶ Velocidad 10 veces mayor en aplicaciones móviles",
-            "▶ 0 caídas durante eventos masivos",
-            "▶ Ahorro de 40% en costes de mantenimiento",
-            "Lecciones importantes:",
-            "- Las direcciones IP nuevas permiten conectar más dispositivos",
-            "- La nube híbrida (local + internet) ofrece mejor estabilidad"
+            "- 500 servidores solo IPv4",
+            "- Problemas de escalabilidad",
+            "Solución AWS:",
+            "1. Crear nueva VPC dual-stack",
+            "2. Migrar progresivamente servicios",
+            "3. Configurar DNS con Route 53 (AAAA records)",
+            "Resultados:",
+            "▶ 40% más de usuarios concurrentes",
+            "▶ Reducción 70% en costes de red",
+            "▶ Mejor SEO por soporte IPv6"
           ]
         }
       }
     },
     {
       "comparativa": {
-        "titulo": "⚖️ Comparando Sistemas Antiguos y Modernos",
+        "titulo": "⚔️ IPv4 vs IPv6 en AWS",
         "modelos": [
           {
-            "nombre": "Sistema Tradicional (IPv4)",
+            "nombre": "IPv4 Tradicional",
             "ventajas": [
-              "Funciona con equipos antiguos sin cambios",
-              "Fácil de configurar para redes pequeñas",
-              "Muchos tutoriales disponibles"
+              "Amplia compatibilidad",
+              "Fácil integración con sistemas legacy",
+              "Documentación extensa"
             ],
             "desventajas": [
-              "Límite de dispositivos conectados",
-              "Requiere equipos extra para seguridad",
-              "Costes adicionales por cada dirección IP"
+              "Coste por IP elástica ($3.6/mes)",
+              "Límite de 5 IPs por interfaz",
+              "Requiere NAT para internet"
             ],
             "casoUso": [
-              "Oficinas pequeñas",
-              "Sistemas heredados (cámaras de seguridad antiguas)",
-              "Redes temporales para eventos"
+              "Aplicaciones heredadas",
+              "Entornos de desarrollo",
+              "Conexiones VPN tradicionales"
             ]
           },
           {
-            "nombre": "Sistema Moderno (IPv6)",
+            "nombre": "IPv6 Moderno",
             "ventajas": [
-              "Permite conectar millones de dispositivos",
-              "Más rápido al eliminar pasos intermedios",
-              "Seguridad integrada desde el diseño",
-              "Sin costes extra por direcciones"
+              "Direcciones ilimitadas (gratis)",
+              "Mejor rendimiento (sin NAT)",
+              "Seguridad integrada (IPSec)"
             ],
             "desventajas": [
-              "Requiere actualizar algunos equipos",
-              "Menos personal familiarizado con la tecnología",
-              "Algunas apps antiguas necesitan ajustes"
+              "Algunos servicios third-party no compatibles",
+              "Requiere actualizar sistemas operativos",
+              "Menor soporte en herramientas antiguas"
             ],
             "casoUso": [
-              "Ciudades inteligentes con muchos sensores",
-              "Aplicaciones de realidad aumentada",
-              "Grandes empresas con sedes globales"
+              "Aplicaciones globales escalables",
+              "IoT y dispositivos masivos",
+              "Streaming de alta velocidad"
             ]
           }
         ],
         "conclusion": [
-          "📅 Plan recomendado:",
-          "1. Primeros 6 meses: Probar ambos sistemas en paralelo",
-          "2. Próximo año: Migrar servicios principales al nuevo sistema",
-          "3. A largo plazo: Usar solo el sistema moderno donde sea posible",
-          "💡 Consejos clave:",
-          "- Capacitar al equipo en nuevas tecnologías",
-          "- Usar herramientas de traducción para sistemas antiguos",
-          "- Monitorizar progreso con métricas claras",
-          "🔮 Visión futura:",
-          "Para 2030, el 90% de internet usará el sistema moderno"
+          "✅ Recomendación AWS:",
+          "- Usar dual-stack durante transición",
+          "- Priorizar IPv6 para nuevos proyectos",
+          "- Monitorizar con VPC Traffic Mirroring",
+          "⏳ Roadmap:",
+          "1. Habilitar IPv6 en todas las VPC",
+          "2. Actualizar AMIs a sistemas compatibles",
+          "3. Capacitar equipos en nuevas herramientas"
         ]
       }
     }
   ],
-  "imagen": "https://codigital.ec/wp-content/uploads/2023/01/img_aws.jpg"
+  "imagen": "https://th.bing.com/th/id/OIP.-pZZzlCvVJKHxks9eGwDqAHaE8?cb=iwc2&rs=1&pid=ImgDetMain"
 }
   ]
